@@ -1,0 +1,28 @@
+﻿<Window x:Class="CurrencyApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CurrencyApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel Margin="5">
+        <ListView x:Name="currencyListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Bayrak">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Path=FlagURL}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Para Birimi" DisplayMemberBinding="{Binding Path=Name}"/>
+                    <GridViewColumn Header="Kod" DisplayMemberBinding="{Binding Path=Code}"/>
+                    <GridViewColumn Header="Alış" DisplayMemberBinding="{Binding Path=Buying}"/>
+                    <GridViewColumn Header="satış" DisplayMemberBinding="{Binding Path=Selling}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </StackPanel>
+</Window>
